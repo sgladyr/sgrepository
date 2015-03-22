@@ -1,0 +1,22 @@
+#!/usr/local/bin/bash
+# Case 1 - getting sources
+#	get) echo "getting" ;
+cvsdir=~/src/test
+
+if [[ –d "$cvsdir" ]];
+	then
+		rm -rf ~/src/test/*
+		echo "DIR ~/src/test/* cleared"
+		echo "======================================"
+		cd ~/src && cvs -q co -d test -r TEST config
+		echo "======================================"
+		echo "CVS queried totally"
+	else 
+		mkdir -p ~/src/test
+		echo "DIR ~/src/test created"
+		cd ~/src && cvs -q co -d test -r TEST config
+		echo "======================================"
+		echo "CVS pulled"
+		cd ~
+#		exit;;
+fi
