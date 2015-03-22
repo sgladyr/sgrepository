@@ -5,7 +5,7 @@
 	a=`grep "\<CVSROOT\>" ~/.bash_profile`
 
 		if [ "$a" = "" ]; then
-			echo "CVSROOT=gold-host.ironport.com:/cvsroot" >> ~/.bash_profile
+			echo "CVSROOT=ldap-host.apple.com:/cvsroot" >> ~/.bash_profile
 			echo "export CVSROOT">> ~/.bash_profile
 			source ~/.bash_profile
 			echo "CVSROOT included into ~/.bash_profile"
