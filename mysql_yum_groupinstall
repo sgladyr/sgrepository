@@ -1,0 +1,24 @@
+# http://www.thegeekstuff.com/2010/04/yum-groupinstall-mysql-database/
+
+yum grouplist | grep -i mysql
+yum groupinfo "MySQL Database"
+yum groupinstall "MySQL Database"
+rpm -qa | grep -i mysql
+
+# grep mysql /etc/passwd
+mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash
+
+# grep mysql /etc/group
+mysql:x:27:
+
+/usr/bin/mysql_install_db --user=mysql
+
+# service mysqld status
+mysqld is stopped
+# service mysqld start
+Starting MySQL:  
+
+# /usr/bin/mysqladmin version
+# /usr/bin/mysqlshow
+# /usr/bin/mysqlshow mysql
+
