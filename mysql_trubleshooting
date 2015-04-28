@@ -1,0 +1,38 @@
+Troubleshooting
+How to test
+
+    Make sure mysql and mysql server are indeed installed and that they are the correct versions:
+
+    # rpm -qa | grep mysql && chkconfig --list | grep mysql
+    mysql-5.0.27-1.fc6
+    mysql-5.0.27-1.fc6
+    mysql-gui-common-1.1.10-3.fc6
+    mysql-server-5.0.27-1.fc6
+    mysql-administrator-1.1.10-3.fc6
+    mysqld          0:off   1:off   2:off   3:off   4:off   5:off   6:off
+
+    Starting mysqld on boot:
+
+    # chkconfig --level 2345 mysqld on && service mysqld restart && chkconfig --list | grep mysqld
+    Stopping MySQL:                                            [  OK  ]
+    Starting MySQL:                                            [  OK  ]
+    mysqld          0:off   1:off   2:on    3:on    4:on    5:on    6:off
+
+    Clear MySQL scrollback history (so sensitive data such as passwords cannot be seen by others with access):
+
+    ]# cat /dev/null > ~/.mysql_history
+
+    Show all users in the MySQL Server database:
+
+    mysql> select * from mysql.user;
+    8 rows in set (0.00 sec)
+
+    Delete a user from the MySQL Server database:
+
+    mysql> delete from mysql.user where host = "dev.mydomain.com";Query OK, 2 rows affected (0.00 sec)
+
+    Delete a null user (user without a username) from the MySQL Server database:
+
+    mysql> delete from mysql.user where user = ' ';
+    Query OK, 1 rows affected (0.00 sec)
+
