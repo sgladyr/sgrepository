@@ -26,3 +26,4 @@ C:\Users\user\AppData\Roaming\MySQL\Workbench\ssh
 
 /usr/bin/mysql_secure_installation
 mysql -V
+vim /usr/my.cnf
