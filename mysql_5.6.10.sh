@@ -14,3 +14,11 @@ wget -O 4.rpm http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-devel-5.6.10-1.
 yum install -y *.rpm
 
 http://tecadmin.net/install-mysql-5-7-centos-rhel/
+
+cat /root/.mysql_secret
+mysql -u root -p
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');
+FLUSH PRIVILEGES;
+quit
+
+C:\Users\user\AppData\Roaming\MySQL\Workbench\ssh
