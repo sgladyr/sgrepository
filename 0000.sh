@@ -27,6 +27,19 @@ rpm -U webmin-1.740-1.noarch.rpm
 
 
 # JAVA
-yum install -y java
-export JAVAPATH=
+# http://stackoverflow.com/questions/10268583/how-to-automate-download-and-installation-of-java-jdk-on-linux
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz
+mkdir /usr/java
+cd /usr/java/
+tar -C /usr/java -xvf /tmp/jdk-8u45-linux-x64.tar.gz
+ln -s jdk1.8.0_45 latest
+ln -s latest default
+ln -s /usr/java/default/bin/java /usr/bin/java
+echo 'export JDK_HOME="/usr/java/default"' >> /etc/profile
+echo 'export JAVA_HOME="/usr/java/default"' >> /etc/profile
+echo 'export JRE_HOME="/usr/java/default/jre"' >> /etc/profile
+echo 'PATH=$PATH:$JAVA_HOME/bin' >> /etc/profile
+source /etc/profile
+#test java
+java -version
 
