@@ -11,6 +11,12 @@ wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch
 rpm -ivh epel-release-6-8.noarch.rpm
 yum update -y
 
+# Perform full system update
+sudo yum clean all
+sudo yum repolist
+sudo yum update
+sudo reboot
+
 # NTP
 yum install ntp
 chkconfig --level 2345 ntpd on
