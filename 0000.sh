@@ -22,6 +22,9 @@ yum install ntp
 chkconfig --level 2345 ntpd on
 /etc/init.d/ntpd start
 
+# Приклад
+sed -i 's/ONBOOT\=no/ONBOOT\=yes/' /etc/sysconfig/network-script/ifcfg-lo\:1
+
 # SOFT
 yum groupinstall -y "Development tools" "Development Libraries" "Administration Tools" "System Tools"
 
