@@ -7,3 +7,5 @@ wget -O 3.rpm http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-server-5.6.10-1
 wget -O 4.rpm http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-devel-5.6.10-1.el6.i686.rpm/from/http://cdn.mysql.com/
 
 yum install -y *.rpm
+
+http://tecadmin.net/install-mysql-5-7-centos-rhel/
