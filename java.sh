@@ -1,11 +1,15 @@
 #!/usr/local/bin/bash
-INSTALL
-ENV
+# INSTALL
+
+
+# ENV
+
 
 echo $JAVA_HOME
 java -version
 updatedb; locate java | grep bin # (mlocate)
 type -a java
-Trobleshooting
+
+# Trobleshooting
 
 echo "DIR ~/src/test created"
