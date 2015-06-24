@@ -25,7 +25,7 @@ cd /opt/java
   
 wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz
 sudo tar -C /opt/java -xvf jdk-8u45-linux-x64.tar.gz
-sudo ln -s jdk-8u45/ lastest
+sudo ln -s jdk1.8.0_45/ lastest
 sudo ln -s lastest default
   
 echo 'export JDK_HOME="/opt/java/default"' >> /etc/profile
