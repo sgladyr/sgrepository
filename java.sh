@@ -19,6 +19,29 @@ echo 'PATH=$PATH:$JAVA_HOME/bin' >> /etc/profile
 source /etc/profile
 java -version
 =====================================================================================
+# INSTALL for JIRA + /opt
+sudo mkdir /opt/java
+cd /opt/java
+  
+sudo wget http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz
+OR
+wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz
+sudo tar -C /opt/java -xvf jdk-8u45-linux-x64.tar.gz
+sudo ln -s jdk-8u45/ lastest
+sudo ln -s lastest default
+  
+echo 'export JDK_HOME="/opt/java/default"' >> /etc/profile
+echo 'export JAVA_HOME="/opt/java/default"' >> /etc/profile
+echo 'export JRE_HOME="/opt/java/default/jre"' >> /etc/profile
+echo 'PATH=$PATH:$JAVA_HOME/bin' >> /etc/profile
+source /etc/profile
+java -version
+
+
+
+
+
+
 
 # ENV
 
