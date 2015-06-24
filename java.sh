@@ -6,6 +6,8 @@ sudo mkdir /usr/java
 cd /usr/java
   
 sudo wget http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz
+OR
+wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz
 sudo tar -C /usr/java -xvf jdk-7u45-linux-x64.tar.gz
 sudo ln -s jdk1.7.0_45/ lastest
 sudo ln -s lastest default
